@@ -1,0 +1,88 @@
+<html>
+	<title>Curso Vue</title>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/x-icon" href="img/icon-vue.png"/>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <button @click="figureOn">Sortear figurinha Vue</button><hr>
+			
+			<!-- figurinha -->
+			<div v-if="figure" class="figure">
+				<img :src="imgLink" :class="imgStyle">
+				<p class="figure-name">{{ figureName }}</p>
+			</div>
+		</div>
+	</body>
+	
+</html>
+
+<script>
+	new Vue({
+		el:"#app",
+		data:{
+			title:"Vue Cards",
+			imgLink:"",
+			imgStyle:"img-default",
+			figureName:"",
+			figure:false,
+			path:"img/",
+			figures:["android.jpeg","cup.jpeg","xxx.jpeg","agent-vue.jpeg","cores.jpeg","butterfly.jpeg"],
+		},//data
+
+		watch:{
+			figure(){
+				setTimeout(() => {
+					this.changeImg()
+				},10000)
+			}
+		},//watch
+
+		methods:{
+			changeImg(){
+				this.imgLink = this.path+this.figures[this.getRandomInt()]
+				this.imgStyle = "img-animation"
+				this.figure = true
+			},
+			figureOn(){
+				if (this.figure){
+					this.figure = false
+					return
+				}
+				this.changeImg()
+			},
+			getRandomInt() {
+  			min = Math.ceil(0);
+  			max = Math.floor(this.figures.length);
+  			return Math.floor(Math.random() * (max - min)) + min;
+			},
+		},//methods
+	})//vue
+</script>
+
+<style>
+.img-default,.img-animation{
+	width:100px;
+	height:200px;
+	border:solid 5px black;
+}
+.img-animation{
+	border:solid 5px black;
+	animation: borderColor 4s linear 0s infinite alternate;
+}
+
+@keyframes borderColor { 
+	from { 
+		border:solid 5px rgb(133, 240, 130); 
+	} 
+	to { 
+		border:solid 5px rgb(233, 143, 233); 
+	}  
+}
+
+</style>
