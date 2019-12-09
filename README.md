@@ -1,5 +1,5 @@
-# curso-vue 
-![VueIcon](https://raw.githubusercontent.com/juliolimareis/curso-vue/master/dom/img/vuejs_logo.png)
+# Curso-vue 
+![VueIcon](dom/img/vuejs_logo.png)
 
 Formas reduzidas
 ```html
