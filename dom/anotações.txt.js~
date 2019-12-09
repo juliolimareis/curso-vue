@@ -1,0 +1,4 @@
+v-on = @
+v-bind = :
+//desligar e ligar uma variavel
+@click="variable = !variable"
