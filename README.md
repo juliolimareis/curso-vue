@@ -7,7 +7,7 @@ Formas reduzidas
 <div v-bind:class = :class>
 ```
 
-desligar e ligar uma variavel
+Desligar e ligar uma variavel
 ```html
 <button @click="variable = !variable">
 ```
@@ -34,3 +34,8 @@ $ git config --global alias.pushall '!git remote | xargs -L1 git push --all'
 ```
 
 Running git pushall will now push all branches to all remotes.
+
+Pesquisar
+```sh
+vue-spritecore
+```
