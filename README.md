@@ -12,7 +12,7 @@ Desligar e ligar uma variavel
 <button @click="variable = !variable">
 ```
 
-### Replace all
+###  Git Push all 
 To push all branches to all remotes:
 
 ```sh
