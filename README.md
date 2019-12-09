@@ -1,5 +1,5 @@
 # curso-vue 
-![VueIcon](https://raw.githubusercontent.com/juliolimareis/curso-vue/master/dom/img/icon-vue.png =150x100)
+![VueIcon](https://www.clientresourcesinc.com/wp-content/uploads/2018/06/vuejs_logo.png)
 
 Formas reduzidas
 ```html
