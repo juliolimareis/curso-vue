@@ -39,3 +39,6 @@ Pesquisar
 ```sh
 vue-spritecore
 ```
+
+###Curiosidades
+* DOM(Document Object Model)

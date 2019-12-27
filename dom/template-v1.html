@@ -1,14 +1,63 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
-    <p>{{ title }}</p>
+		<p>{{ title }}</p>
+		<li v-for="(value, key, i) in livros">
+				<template v-if="Array.isArray(value)">
+					<span v-for="(result, j) in value">
+						<template v-if="value.length == (j+1)">
+							{{ result }}º Edição
+						</template>
+						<template v-else>
+							{{ result }}º Edição,
+						</template>  
+					</span>
+				</template>
+				<template v-else>
+						{{ key }} : {{ value }}
+				</template>
+			</li>
+		</template>
+		<hr>
+    <ul>
+        <li v-for="(cor,i) in cores">
+            {{ i }} - {{ cor }}
+        </li>
+    </ul>
+    <hr>
+    <template v-for="(cor,i) in cores">
+        <span> {{ cor }} </span>
+        <span> {{ i }} </span>
+    </template>
+    <hr>
+    <ul>
+        <template v-for="(pessoa,index) in pessoas">
+            <li v-for="(valor,key,indexKey) in pessoa">
+                {{ indexKey+1 }}:{{ key }}: {{ valor }}
+            </li> 
+        </template>
+    </ul>
+    <hr>
+    <span v-for="n in 10">{{ n }}</span>
 </div>
 
 <script>
     new Vue({
         el:"#app",
         data:{
-          title:"Hi Vue CDN!"  
-        }
+          title:"Hi Vue CDN!",  
+          cores:["Vermelho","Verde","Amarelo","Azul"],
+          pessoas:[
+            { nome: "Ana", idade:26, peso: 59 },
+            { nome: "Gulherme", idade:22, peso:89 }
+					],
+					livros:{
+						titulo: "O Senhor dos Anéis",
+						autor: "J.R.R Tolkiens",
+						volume: "3",
+						indice:[1,2,3,4,5,6,7,8,9,10]
+					}
+        }//data
     })
 </script>

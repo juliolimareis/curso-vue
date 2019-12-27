@@ -9,14 +9,16 @@
 
   <body>
     <div id="app">
-      <h1>{{ title }}</h1>
+      <h1 >{{ title }}</h1>
       <button @click="figureOn">Sortear figurinha Vue</button><hr>
 			
+	    <template if="figure">
 			<!-- figurinha -->
-			<div v-if="figure" class="figure">
+			<div class="figure">
 				<img :src="imgLink" :class="imgStyle">
 				<p class="figure-name">{{ figureName }}</p>
 			</div>
+		  </template>-
 		</div>
 	</body>
 	
@@ -24,6 +26,9 @@
 
 <script>
 	new Vue({
+		mounted(){
+		},
+
 		el:"#app",
 		data:{
 			title:"Vue Cards",
@@ -34,6 +39,10 @@
 			path:"img/",
 			figures:["android.jpeg","cup.jpeg","xxx.jpeg","agent-vue.jpeg","cores.jpeg","butterfly.jpeg"],
 		},//data
+
+		computed:{
+
+		},
 
 		watch:{
 			figure(){

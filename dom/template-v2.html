@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Course Vue</title>
-        <link rel="icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvuejsexamples.com%2Fcontent%2Fimages%2F2017%2F10%2Fvuejsexamples.png&f=1&nofb=1" type="image/icon type">
+        <link rel="icon" href="img/icon-vue.png" type="image/icon type">
         <meta charset="utf-8">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
     </head>  
@@ -11,7 +11,7 @@
             <h3>num : {{ num > 29 ? num=0:num=num }}</h3>
             
             <!-- num -->
-            <button v-on:click="minus">Minus {{ valueSum }}</button>
+            <button @click="minus">Minus {{ valueSum }}</button>
             <input type="text" size="1" name="somar" v-model="valueSum" pattern="[0-9]"></input>
             <button v-on:click="sum">Sum {{ valueSum }}</button>
             
