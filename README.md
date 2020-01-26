@@ -1,10 +1,17 @@
 # Curso-vue 
 ![VueIcon](dom/img/vuejs_logo.png)
 
-Formas reduzidas
+#### Formas reduzidas
 ```html
 <div v-on:click = @click>
 <div v-bind:class = :class>
+```
+
+#### Spread operator
+```js
+function minhaFuncao(x, y, z) { }
+var args = [0, 1, 2];
+minhaFuncao(...args);
 ```
 
 Desligar e ligar uma variavel
@@ -12,7 +19,7 @@ Desligar e ligar uma variavel
 <button @click="variable = !variable">
 ```
 
-###  Git Push all 
+### Git Push all 
 To push all branches to all remotes:
 
 ```sh
@@ -35,10 +42,10 @@ $ git config --global alias.pushall '!git remote | xargs -L1 git push --all'
 
 Running git pushall will now push all branches to all remotes.
 
-Pesquisar
+#### Pesquisar
 ```sh
 vue-spritecore
 ```
 
-###Curiosidades
+### Curiosidades
 * DOM(Document Object Model)
