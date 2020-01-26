@@ -1,13 +1,16 @@
 <template>
 	<div id="app">
+
     <span>
       <button @click="components='Quotes'">Quotes</button>
       <button @click="components='About'">About</button>
     </span>
+
     <!-- manter o objeto sempre vivo -->
     <keep-alive>
       <component :is="components" />
     </keep-alive>
+    
 	</div>
 </template>
 

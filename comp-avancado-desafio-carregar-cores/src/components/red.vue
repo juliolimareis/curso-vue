@@ -1,6 +1,6 @@
 <template>
-    <div class="box green">
-      <slot></slot>
+    <div class="box red">
+      <slot/>
     </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

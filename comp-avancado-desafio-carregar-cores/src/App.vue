@@ -1,33 +1,44 @@
 <template>
 	<div id="app">
+    
 		<span>
-			<button class="red" @click="component='reds'">Carregar Componente Vermelho</button>
-			<button class="green" @click="component='green'">Carregar Componente Verde</button>
-			<button class="blue" @click="component='blue'">Carregar Componente Azul</button>
+			<button class="red" @click="component='red'">
+        Carregar Componente Vermelho
+      </button>
+			<button class="green" @click="component='green'">
+        Carregar Componente Verde
+      </button>
+			<button class="blue" @click="component='blue'">
+        Carregar Componente Azul
+      </button>
 		</span>
-		
+		<!-- keep-alive manter objeto vivo -->
     <keep-alive>
-      <component :is="component" />
+      <component :is="component">
+        <span>Conteúdo do Componente <strong>{{ component }}</strong></span>
+      </component>    
     </keep-alive>
-		
-		<!-- <green>Carregar Componente <b>Verde</b></green>
-		<blue>Carregar Componente <b>Azul</b></blue> -->
+
 	</div>
 </template>
 
 <script>
-import reds from '@/components/reds.vue'
-import green from '@/components/green.vue'
-import blue from '@/components/blue.vue'
+import red from '@/components/red'
+import green from '@/components/green'
+import blue from '@/components/blue'
 
 export default {
 	name: 'app',
-  components: { reds, green, blue },
-  date(){
+  components: { 
+    red, 
+    green, 
+    blue 
+  },
+  data(){
     return{
       component:''
     }
-  }
+  },//data
 }
 </script>
 
